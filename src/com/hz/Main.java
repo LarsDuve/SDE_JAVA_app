@@ -6,7 +6,6 @@ import com.hz.factory.CarCreator;
 import com.hz.factory.PlaneCreator;
 import com.hz.factory.TransportCreator;
 import com.hz.strategy.CalculatorContext;
-//import com.hz.strategy.MinusOperationStrategy;
 import com.hz.strategy.MultiplicationOperationStrategy;
 
 public class Main {
@@ -18,10 +17,6 @@ public class Main {
         // distance: km                     DONE
 
         // type of transport                DONE
-
-        // capacity: number of people       Redundant
-
-        // ecofriendly: A to F              Redundant
 
         // fuel price                       DONE
 
