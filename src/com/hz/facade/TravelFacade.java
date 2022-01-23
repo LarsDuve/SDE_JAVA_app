@@ -1,12 +1,14 @@
 package com.hz.facade;
 
-import com.hz.factory.Transport;
+import com.hz.strategy.CalculatorContext;
+import com.hz.strategy.MultiplicationOperationStrategy;
 
 public class TravelFacade {
 
-    public static void startTravel(String distance, double fuelPrice) {
-        double cost = Double.parseDouble(distance) * fuelPrice;
-        System.out.println("Your travel costs are: €" + cost);
+    public static void startTravel(int distance, double fuelPrice, double choiceDiscount) {
+
+        CalculatorContext discountOnFuel = new CalculatorContext(new MultiplicationOperationStrategy(fuelPrice, choiceDiscount, distance));
+
     }
 
 }

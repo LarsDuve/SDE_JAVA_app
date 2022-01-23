@@ -6,7 +6,7 @@ import com.hz.factory.CarCreator;
 import com.hz.factory.PlaneCreator;
 import com.hz.factory.TransportCreator;
 import com.hz.strategy.CalculatorContext;
-import com.hz.strategy.MinusOperationStrategy;
+//import com.hz.strategy.MinusOperationStrategy;
 import com.hz.strategy.MultiplicationOperationStrategy;
 
 public class Main {
@@ -45,13 +45,11 @@ public class Main {
             default -> writer.write("invalid choice, you broke it");
         }
 
-
         // Ask user how far they would like to travel
         String q2 = "How many kilometers would you like to travel?";
         writer.write(q2);
 
-        String choiceDistance = reader.readLine();
-
+        int choiceDistance = Integer.parseInt(reader.readLine());
 
         // Ask user how far they would like to travel
         String q3 = "How many percent of discount would you like?";
@@ -60,14 +58,12 @@ public class Main {
         double choiceDiscount = Double.parseDouble(reader.readLine()); // Discount must be provided between 100 and 0
 
         assert transportCreator != null;
-        CalculatorContext halfPrice = new CalculatorContext(new MultiplicationOperationStrategy(transportCreator.getPrice(), choiceDiscount));
+        CalculatorContext discountOnFuel = new CalculatorContext(new MultiplicationOperationStrategy(transportCreator.getPrice(), choiceDiscount, choiceDistance));
 
-
-//        Facade does not get used
-//        TravelFacade.startTravel(choiceDistance, transportCreator.getPrice());
+        TravelFacade.startTravel(choiceDistance, transportCreator.getPrice(), choiceDiscount);
 
         System.out.println("Price for travelling:");
-        halfPrice.compute(); // Discounted price is written
+        discountOnFuel.compute(); // Discounted price is written
 
         System.out.println("type of transport: " + transportCreator.getTransport() + "  chosen distance: " + choiceDistance + "  fuel price (per km): €" + transportCreator.getPrice());
     }
