@@ -12,6 +12,7 @@ Vervolgens returned de gekozen creator de juiste value voor getPrice() en maakt 
 Voor de applicatie die wij hebben gemaakt wordt doormiddel van een simpele startTravel methode aan te roepen, het hele rekenproces gestart waardoor er in de Main alleen maar parameters meegeleverd moeten worden waar de facade die berekend met behulp van de strategy.
 
 <h4>Behavioural design pattern: strategy method - Senna & Lars</h4>
+
 In de strategy word de mogelijkheid gegeven om korting toe te voegen aan de reiskosten. 
 In de strategy wordt in dit geval een meervuldigings berekening gebruikt om de korting toe te voegen op de fuelPrice en distance die met elkaar vermenigvuldigd zijn. 
 Door een strategy hier toe te passen is het sneller om in het vervolg nog een andere soort OperationStrategy aan te maken.
